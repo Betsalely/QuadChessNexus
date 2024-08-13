@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://oqksxmk0oy6d"]
+
+[ext_resource type="Script" path="res://Game.gd" id="1_13ggc"]
+[ext_resource type="Script" path="res://Generator.gd" id="2_tev6t"]
+
+[node name="Board" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 2.0
+offset_right = 42.0
+offset_bottom = 40.0
+script = ExtResource("1_13ggc")
+
+[node name="Flow" type="FlowContainer" parent="."]
+layout_mode = 0
+script = ExtResource("2_tev6t")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -224.0
+offset_top = 62.0
+offset_right = -183.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 22
+text = "Turn:"
+
+[node name="TURN_label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -161.0
+offset_top = 63.0
+offset_right = -98.0
+offset_bottom = 94.0
+theme_override_font_sizes/font_size = 22
+text = "White"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = -224.0
+offset_top = 94.0
+offset_right = -169.0
+offset_bottom = 125.0
+theme_override_font_sizes/font_size = 36
+text = "BOARD: 2"
+
+[connection signal="send_location" from="Flow" to="." method="_on_flow_send_location"]
